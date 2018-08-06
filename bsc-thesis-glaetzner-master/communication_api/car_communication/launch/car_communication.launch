@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+	<node pkg="car_communication" name="car_communication_node" type="car_communication_node" output="screen">
+	<param name="car_name" value="pses-01" />
+	<param name="retry_timeout" value="1"/>
+	</node>
+
+</launch>
+

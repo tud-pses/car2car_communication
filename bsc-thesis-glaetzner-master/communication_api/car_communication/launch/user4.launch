@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+	<node pkg="car_communication" name="user_node" type="user_node" output="screen">
+	<param name="dest_car" value="pses-01" />
+	<param name="loop" value="1"/>	
+	</node>
+
+</launch>
+

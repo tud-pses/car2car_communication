@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+   
+<node pkg="adhoc_communication" type="adhoc_communication_node" name="adhoc_communication_node" output="screen">
+      <param name="hop_limit_increment" value="1" />
+</node>
+</launch>

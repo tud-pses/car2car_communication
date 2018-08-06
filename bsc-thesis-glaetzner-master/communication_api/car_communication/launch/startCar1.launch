@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<launch>
+
+<!-- insert your the specific car name here -->
+<arg name="car_name" default= "pses-01" />
+
+<!-- adhoc_comunication -->
+
+<node pkg="adhoc_communication" type="adhoc_communication_node" name="adhoc_communication_node" output="screen">
+      <param name="hop_limit_increment" value="1" />
+</node>
+
+
+	
+<!-- car communication -->
+
+	<node pkg="car_communication" name="car_communication_node" type="car_communication_node" output="screen">
+		<param name="car_name" value="$(arg car_name)" />
+		<param name="retry_timeout" value="0.05"/>
+	</node>
+
+	<node pkg="car_communication" name="neighbor_scan_node" type="neighbor_scan_node" output="screen"></node>
+
+<!-- ar track alvar for detecting tags -->
+
+	<arg name="marker_size" default="13.4" />
+	<arg name="max_new_marker_error" default="0.08" />
+	<arg name="max_track_error" default="0.2" />
+
+	<arg name="cam_image_topic" default= "/kinect2/qhd/points" />
+	<arg name="cam_info_topic" default="/kinect2/qhd/camera_info"/>
+
+	<arg name="output_frame" default="/torso_lift_link" />
+
+	<node name="ar_track_alvar" pkg="ar_track_alvar" type="individualMarkers" respawn="false">
+		<param name="marker_size"           type="double" value="$(arg marker_size)" />
+		<param name="max_new_marker_error"  type="double" value="$(arg max_new_marker_error)" />
+		<param name="max_track_error"       type="double" value="$(arg max_track_error)" />
+		<param name="output_frame"          type="string" value="$(arg output_frame)" />
+
+		<remap from="camera_image"  to="$(arg cam_image_topic)" />
+		<remap from="camera_info"   to="$(arg cam_info_topic)" />
+	</node>
+
+</launch>
+

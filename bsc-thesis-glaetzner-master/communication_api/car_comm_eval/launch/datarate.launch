@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+	<node pkg="car_comm_eval" name="datarate_node" type="datarate_node" output="screen">
+		<param	name="size" value="1000"/>
+		<param	name="max_i_count" value="5"/>
+		<param	name="dst_car" value="pses-01"/>
+
+	</node>
+
+
+
+</launch>

@@ -1,0 +1,4 @@
+adhoc_customize/CarMsg msg
+---
+bool success
+string[] failed_dst

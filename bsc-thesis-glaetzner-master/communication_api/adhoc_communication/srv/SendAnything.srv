@@ -1,0 +1,6 @@
+string topic 
+uint8 type
+string serialized_data 
+string dst_robot 
+---
+uint8 status

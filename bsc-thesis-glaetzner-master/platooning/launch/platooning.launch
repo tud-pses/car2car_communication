@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+	<node pkg="platooning" name="platooning_node" type="platooning_node" output="screen">
+
+		<param	name="sight_timeout" value="3"/>
+		<param	name="network_timeout" value="3"/>
+		<param	name="rate" value="5"/>
+
+	</node>
+
+</launch>

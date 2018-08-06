@@ -1,0 +1,5 @@
+string topic 
+Rectangle rect 
+string dst_robot 
+---
+uint8 status

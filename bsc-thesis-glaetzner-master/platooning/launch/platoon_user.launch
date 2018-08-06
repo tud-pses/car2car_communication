@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+	<node pkg="platooning" name="platoon_user_node" type="platoon_user_node" output="screen">
+		<param name="rate" value="10"/>
+	</node>
+
+</launch>

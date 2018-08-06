@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+	<node pkg="car_comm_eval" name="bc_latency" type="bc_latency" output="screen">
+
+		<param	name="loops" value="100"/>
+		
+	</node>
+
+
+
+</launch>
